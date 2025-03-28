@@ -1,0 +1,343 @@
+.quizzesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.quizzesTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.quizzesDescription {
+  font-size: 1rem;
+  color: var(--muted-foreground);
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.quizzesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.quizCard {
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quizCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.quizCardHeader {
+  padding-bottom: 0.5rem;
+}
+
+.quizTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.eventName {
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+.quizCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quizDescription {
+  font-size: 0.9rem;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.quizDetails {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+.quizDetail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quizRewards {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.startQuizButton {
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.completedQuiz {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: var(--accent);
+  border-radius: 6px;
+}
+
+.completedStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: green;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.quizScore {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+/* Active Quiz Styles */
+.activeQuizContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.quizHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.activeQuizTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.quizProgress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+.progressBar {
+  width: 200px;
+  height: 6px;
+  background-color: var(--accent);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #4776e6 0%, #8e54e9 100%);
+  transition: width 0.3s ease;
+}
+
+.quizTimer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.questionCard {
+  border: 1px solid var(--border);
+}
+
+.questionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.questionText {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.answerOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.answerOption {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.answerOption:hover {
+  background-color: var(--accent);
+}
+
+.selectedAnswer {
+  background-color: rgba(71, 118, 230, 0.1);
+  border-color: var(--primary);
+}
+
+.optionLetter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--accent-foreground);
+}
+
+.selectedAnswer .optionLetter {
+  background-color: var(--primary);
+  color: white;
+}
+
+.optionText {
+  font-size: 1rem;
+  color: var(--foreground);
+}
+
+.questionActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.exitButton,
+.nextButton {
+  min-width: 120px;
+}
+
+/* Quiz Results Styles */
+.quizResults {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.resultsCard {
+  max-width: 500px;
+  width: 100%;
+  border: 1px solid var(--border);
+}
+
+.resultsHeader {
+  text-align: center;
+}
+
+.resultsTitle {
+  font-size: 1.5rem;
+}
+
+.resultsContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.scoreCircle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(71, 118, 230, 0.2) 0%, rgba(142, 84, 233, 0.2) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary);
+}
+
+.scoreValue {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.scoreTotal {
+  font-size: 1.5rem;
+  color: var(--muted-foreground);
+}
+
+.scoreMessage {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.rewardMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.rewardIcon {
+  color: gold;
+}
+
+.rewardMessage p {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.finishButton {
+  min-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .quizHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .questionActions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .exitButton,
+  .nextButton {
+    width: 100%;
+  }
+}
+

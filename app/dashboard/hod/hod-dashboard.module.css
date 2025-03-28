@@ -1,0 +1,427 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.welcomeSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--gradient-primary);
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.2);
+  animation: slideInUp 0.5s ease-out;
+}
+
+.welcomeContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.welcomeTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.welcomeSubtitle {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.quickActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.statsSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  animation: slideInUp 0.5s ease-out;
+  animation-delay: 0.1s;
+  animation-fill-mode: both;
+}
+
+.statCard {
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.statCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-primary);
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.statContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.statIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(71, 118, 230, 0.2) 0%, rgba(142, 84, 233, 0.2) 100%);
+  color: #8e54e9;
+  transition: all 0.3s ease;
+}
+
+.statCard:hover .statIcon {
+  transform: scale(1.1);
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  color: var(--foreground);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+  margin: 0.25rem 0 0 0;
+}
+
+.mainSection {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  animation: slideInUp 0.5s ease-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+.eventsCard,
+.departmentsCard,
+.approvalCard {
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.eventsCard:hover,
+.departmentsCard:hover,
+.approvalCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.eventsList,
+.departmentsList,
+.approvalsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.eventItem {
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.eventItem:hover {
+  background: rgba(99, 102, 241, 0.05);
+  border-color: var(--primary);
+}
+
+.eventInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.eventTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.eventMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+.eventDate,
+.eventCommittee {
+  display: inline-block;
+}
+
+.eventStats {
+  display: flex;
+  gap: 1rem;
+}
+
+.eventStat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.eventStat .statLabel {
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+}
+
+.eventStat .statValue {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--foreground);
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.eventProgress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+}
+
+.progressBar {
+  height: 6px;
+  background-color: var(--accent);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: width 0.3s ease;
+}
+
+.eventActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.eventButton {
+  flex: 1;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.sideSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.departmentItem {
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.departmentItem:hover {
+  background: rgba(99, 102, 241, 0.05);
+  border-color: var(--primary);
+}
+
+.departmentName {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--foreground);
+}
+
+.departmentStats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.departmentStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.departmentStat .statLabel {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.departmentStat .statValue {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--foreground);
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.approvalItem {
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.approvalItem:hover {
+  background: rgba(99, 102, 241, 0.05);
+  border-color: var(--primary);
+}
+
+.approvalTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.approvalMeta {
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+  margin: 0.25rem 0 0 0;
+}
+
+.approvalActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.rejectButton,
+.approveButton {
+  flex: 1;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.approveButton {
+  background: var(--gradient-primary);
+}
+
+.rejectButton:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--destructive);
+  border-color: var(--destructive);
+}
+
+@media (max-width: 992px) {
+  .mainSection {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcomeSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .statsSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .eventStats {
+    flex-wrap: wrap;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
